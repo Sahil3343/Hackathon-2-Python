@@ -11,17 +11,14 @@ Time Complexity Reasoning - As we have one loop that iterates through n characte
 class Question2:
     """Class for question 2"""
 
-    qwerty_lower = {
+    qwerty = {
         'qwertyuiop': 'qwertyuiop',
         'asdfghjkl': 'asdfghjkl',
         'zxcvbnm': 'zxcvbnm'
     }
 
-    qwerty_upper = {
-        'QWERTYUIOP': 'QWERTYUIOP',
-        'ASDFGHJKL': 'ASDFGHJKL',
-        'ZXCVBNM': 'ZXCVBNM',
-    }
+    CASE_LOWER = "LOWER"
+    CASE_UPPER = "UPPER"
 
     def encrypt_string(self, input_string, n):
         """
@@ -37,36 +34,30 @@ class Question2:
             # Checking if current char is alphabet or not
             if char.isalpha():
                 # Checking if current char is lower or upper
+                case_flag = ""
                 if char.islower():
-                    # Finding the corresponding row for current char
-                    for row in self.qwerty_lower.values():
-                        if char in row:
-                            # Finding the position of the char
-                            char_position = row.index(char)
+                    case_flag = self.CASE_LOWER
+                else:
+                    case_flag = self.CASE_UPPER
+                    char = char.casefold()
+                # Finding the corresponding row for current char
+                for row in self.qwerty.values():
+                    if char in row:
+                        # Finding the position of the char
+                        char_position = row.index(char)
 
-                            # Moving char by n to the right
-                            n_position = (char_position + n) % len(row)
+                        # Moving char by n to the right
+                        n_position = (char_position + n) % len(row)
 
-                            # Finding encrypted char according to n position calculated
-                            encrypted_char = row[n_position]
+                        # Finding encrypted char according to n position calculated
+                        encrypted_char = row[n_position]
 
-                            # Appending encrypted char to result string
+                        # Appending encrypted char to result string
+                        if case_flag == self.CASE_LOWER:
                             result += encrypted_char
-                elif char.upper():
-                    # Finding the corresponding row for current char
-                    for row in self.qwerty_upper.values():
-                        if char in row:
-                            # Finding the position of the char
-                            char_position = row.index(char)
+                        else:
+                            result += str(encrypted_char).capitalize()
 
-                            # Moving char by n to the right
-                            n_position = (char_position + n) % len(row)
-
-                            # Finding encrypted char according to n position calculated
-                            encrypted_char = row[n_position]
-
-                            # Appending encrypted char to result string
-                            result += encrypted_char
             else:
                 result += char
 
