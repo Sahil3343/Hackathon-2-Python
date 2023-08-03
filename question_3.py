@@ -3,8 +3,9 @@ Question 3
 Input -
 Expected output -
 
-Time Complexity Achieved -
-Time Complexity Reasoning -
+Time Complexity Achieved - O(n)
+Time Complexity Reasoning - As we have one loop and worst case we need to
+iterate all the barriers it will be O(n)
 """
 
 class Question3:

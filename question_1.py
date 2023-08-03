@@ -3,9 +3,9 @@ Question 1
 Input - [1, 4, 5, 6, 6, 5, 3, 5, 1, 6, 4, 6]
 Expected output - [6, 6, 6, 6, 5, 5, 5, 1, 1, 4, 4, 3]
 
-Time Complexity Achieved - O(n + m)
-Time Complexity Reasoning - As we have 2 loops. One iterates n matches
-and other iterates m teams
+Time Complexity Achieved - O(n log n)
+Time Complexity Reasoning - As we are sorting a dictionary and also a single
+for loop it will result to the above
 """
 import traceback
 

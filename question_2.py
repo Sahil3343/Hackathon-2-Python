@@ -4,7 +4,7 @@ Input - This is a sample string, where chars are rotated by 3 keys on right side
 Expected output - Ilqg qg f gfcedy giuqxk, tlyuy nlfug fuy uwifiyh zo 3 syog wx uqkli gqhy.
 
 Time Complexity Achieved - O(n)
-Time Complexity Reasoning - As we have one loop that iterates through n characters
+Time Complexity Reasoning - As we have one loop that iterates through n characters.
 """
 
 

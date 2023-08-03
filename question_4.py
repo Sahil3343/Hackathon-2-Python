@@ -3,8 +3,9 @@ Question 4
 Input - python programming
 Expected output - 2
 
-Time Complexity Achieved -
-Time Complexity Reasoning -
+Time Complexity Achieved - O(n)
+Time Complexity Reasoning - As we have one for loop to iterate
+every single character in the string
 """
 
 
